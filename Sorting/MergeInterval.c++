@@ -14,11 +14,11 @@ class solution{
         sort(interval.begin(),interval.end());
 
         vector<vector<int>>mergeInter;
-        mergeInter[0] = interval[0];
+        mergeInter.push_back(interval[0]);
 
         for(int i = 1;i<n;i++){
             if(mergeInter.back()[1] >= interval[i][0]){
-                mergeInter.back()[1] = max(interval[i][0] , mergeInter.back()[1]);
+                mergeInter.back()[1] = max(interval[i][1] , mergeInter.back()[1]);
             }
             else{
                 mergeInter.push_back(interval[i]);
@@ -44,6 +44,9 @@ int main(){
     vector<vector<int>>res;
     solution obj;
     res = obj.mergeInterval(interval);
+
+    printRes(res);
+    return 0;
 
 
 
