@@ -30,6 +30,23 @@ class Solution{
 
        }
 
-       vector<v
+       vector<vector<int>>InsertIntoIntervals(vector<vector<int>>&intervals, vector<int>&inter){
+        intervals.push_back(inter);
+        return mergeIntervals(intervals);
+       }
 
 };
+
+int main(){
+    vector<vector<int>>intervals = {
+        {1,2},{2,3},{4,7},{5,8},{9,12}
+    };
+    vector<int>inter = {4,7};
+    
+    Solution obj;
+    obj.InsertIntoIntervals(intervals,inter);
+
+
+    return 0;
+
+}
