@@ -12,7 +12,7 @@ class Solution{
     public:
        vector<vector<int>>mergeIntervals(vector<vector<int>>&intervals){
         int n = intervals.size();
-        sort(intervals.begin()),intervals.end();
+        sort(intervals.begin(),intervals.end());
 
        }
 
