@@ -45,3 +45,5 @@ int main(){
     Solution obj;
     cout<<obj.kthElement(a,b,6)<<endl;
 }
+
+//method 02;
