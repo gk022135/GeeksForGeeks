@@ -12,18 +12,23 @@ using namespace std;
 
 class Solution{
     public:
-          bool CanPlace(){
+          bool CanPlace(vector<int> &stalls, int i, int k){
+            
 
           }
           int minOfMaxDis(vector<int> &stalls, int k){
             sort(stalls.begin(),stalls.end());
             int n = stalls.size();
 
-            int low  = stalls[0];
-            int high = stalls[n-1];
+            int low  = 0;
+            int high = stalls[n-1] - stalls[0];
 
-            for(int i = 0;i<(high - low); i++){
-                
+            for(int i = 0;i<=high; i++){
+                if(CanPlace(stalls, i, k )){
+
+                }
+
+
             }
 
           }
