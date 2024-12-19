@@ -1,7 +1,8 @@
 /*
 Given a sorted array of distinct positive integers arr[], we need to find the kth positive number that is missing from arr[].  
 */
-
+// question on GFG 160 DAYS 
+//Question No:- 1539 on LeetCode
 #include<iostream>
 #include<vector>
 
