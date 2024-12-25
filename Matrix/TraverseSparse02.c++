@@ -31,10 +31,39 @@ class SpiralTraverse{
             int newC = c + dir_c[dir_pointer];
 
             if((newR>=0 && newR < m) && (newC >= 0 && newC<n) && !visited[newR][newC]){
-                
+                r = newR;
+                c = newC;
+
+            }
+            else{
+                dir_pointer = (dir_pointer + 1)%4;
+
+                r = r + dir_r[dir_pointer];
+                c = c + dir_c[dir_pointer];
             }
 
 
         }
+        return res;
     }
 };
+
+int main(){
+    vector<vector<int>>mat = {
+        {1,2,3,4},
+        {5,6,7,8},
+        {9,10,11,12},
+        {13,14,15,16}
+    };
+
+    vector<int>result;
+
+    SpiralTraverse obj;
+    result = obj.TraverseMatrix(mat);
+
+    for(int i : result) cout<<i<<", ";
+    cout<<endl;
+
+    return 0;
+
+}
