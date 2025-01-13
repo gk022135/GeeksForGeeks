@@ -55,7 +55,7 @@ public:
         }
         return cnt;
     }
-    // Approach -02
+    // Approach -03
     int tripSumCnt(vector<int> &nums, int target)
     {
         int n = nums.size();
