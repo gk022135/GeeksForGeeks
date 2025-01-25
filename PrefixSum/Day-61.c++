@@ -7,6 +7,9 @@ using namespace std;
 
 class Solution{
     public:
+    //approach -02
+
+    //approch-03
     int equiPoint(vector<int>&arr){
 
         int totalSum = 0;
