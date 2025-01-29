@@ -1,7 +1,9 @@
 // as we can find the number of permutation of string in same way we can find the number of permutation of given arr of number
 //  lets implement it 
 
-// < ----------------------------------------------------->
+/* < ----------------------------------------------------->
+step 01. 
+ < -----------------------------------------------------> */
 
 #include<iostream>
 #include<vector>
