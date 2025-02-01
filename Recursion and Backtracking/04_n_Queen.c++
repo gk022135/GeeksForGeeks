@@ -16,6 +16,6 @@ in next step place second queen to second row do same proccess as above
    A. check base case if index == n(Total Queen) 
         then push tempoary temp to result 
           // index --> (0 - n) queen1 to queenN
-   B. 
+   B. iterate 
 <-------------------------------->
 */
