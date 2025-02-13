@@ -16,6 +16,7 @@ The idea is to traverse the tree recursively, passing the current node and its l
 
 #include<iostream>
 #include<vector>
+#include<queue>
 
 using namespace std;
 
@@ -52,6 +53,46 @@ void levelOrderRec(node* root, int level, vector<vector<int>> &result){
     levelOrderRec(root->right, level + 1, result);
 }
 
+
+//level order traversal using queue 
+/*
+<---------Approach 2 --------->
+*/
+vector<vector<int>> QueueTraversal(node* root, vector<vector<int>> &result){
+    if(root == nullptr){
+        return {};
+    }
+    queue<node* >q;
+    
+
+    //enqueue root
+    q.push(root);
+    int currentLevel = 0;
+
+    while(!q.empty()){
+        int len = q.size();
+        result.push_back({});
+
+        for(int i =0; i<len; i++){
+            //add front of queue and remove it from queue
+
+            node*  temproot = q.front();
+
+            //ab iss temproot ke childs ko queue mein dalo last mein
+
+            if(temproot ->left != nullptr){
+                q.push(temproot->left);
+            }
+            if(temproot -> right != nullptr){
+                q.push(temproot ->right);
+            }
+        }
+        currentLevel++;
+    }
+    return result;
+
+}
+
 vector<vector<int>> LevelOrderTraveresal(node * root){
     vector<vector<int>> result;
 
@@ -73,13 +114,27 @@ int main(){
 
     root->right->right->right = new node(6);
 
-    vector<vector<int>> res = LevelOrderTraveresal(root);
-
+    vector<vector<int>> resRec = LevelOrderTraveresal(root);
+    
     cout<<"[";
-    for(auto i: res){
+    for(auto i: resRec){
         cout<<"[";
         for(auto j : i){
             cout<<j<<" ";
+        }
+        cout<<"],";
+    }
+    cout<<"]\n";
+
+    cout<<"Level order traversal using queue\n";
+
+    vector<vector<int>> resQueue = QueueTraversal(root);
+   
+    cout<<"[";
+    for(auto i : resQueue){
+        cout<<"[";
+        for(auto j : i){
+            cout<<j<<",";
         }
         cout<<"],";
     }
