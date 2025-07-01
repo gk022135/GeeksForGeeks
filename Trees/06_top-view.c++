@@ -79,6 +79,18 @@ int main(){
     vector<int> array;
     //call the function for creating the binary tree;
     cout<<"enter the total nodes in binary tree"<<endl;
-    
+    int size;
+    cin>>size;
+
+    for(int i = 0;i<size; i++){
+        int x;
+        cout<<"enter node"<<i<<": ";
+        cin >>x;
+        array.push_back(x);
+    }
+
+    Node* root = creating_BinaryTree(array, 0, size);
+
+    return 0;
 
 }
